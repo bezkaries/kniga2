@@ -10,6 +10,30 @@
         body {
             font-family: 'Roboto', system-ui, sans-serif;
         }
+        #header {
+          margin: 0 auto;
+          width: 100%;
+          position: relative;
+        }
+        
+        #header .logo {
+          float: left;
+          margin-top:17px;
+          width: 186px;
+          height: 27px;
+          background: url(/images/logo.png) 0 0 no-repeat;
+          text-indent: -999em;
+        }
+        /********************/
+        /*  Retina support  */
+        /********************/
+        
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+          #header .logo {
+            background-image: url(/images/logo@2x.png);
+            background-size: 186px 27px;
+          }
+        }
         .page {
             max-width: 1200px;
             margin: 0 auto;
@@ -44,6 +68,13 @@
     </style>
 </head>
 <body class="bg-white">
+    <div id="header-wrapper">
+      <div id="header">
+        <div>
+          <a class="logo" href="https://bezkaries.com/">BezKaries.com</a>
+        </div>
+      </div><!-- #header -->
+    </div><!-- #header-wrapper -->
     <!-- PAGE 1 -->
     <div class="page mb-12">
         <!-- Top beige section -->
@@ -63,7 +94,7 @@
             
             <!-- Book cover -->
             <div class="flex justify-center">
-                <img src="/images/cover.png" alt="Книга - Най-красивото лице на твоето дете" class="shadow-2xl rounded-lg">
+                <img src="/images/cover.png" srcset="/images/cover@2x.png 2x" alt="Книга - Най-красивото лице на твоето дете" class="shadow-2xl rounded-lg">
             </div>
         </div>
 
@@ -128,7 +159,7 @@
         <div class="grid md:grid-cols-2 gap-12 px-8 pb-12">
             <!-- Book -->
             <div class="flex flex-col items-center">
-                <img src="https://picsum.photos/id/1015/380/520" alt="Книга" class="shadow-2xl mb-6">
+                <img src="/images/cover.png" srcset="/images/cover@2x.png 2x" alt="Книга" class="shadow-2xl mb-6">
                 <div class="text-4xl font-bold text-red-600">12 EUR</div>
             </div>
             
