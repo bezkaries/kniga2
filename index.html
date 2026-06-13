@@ -10,10 +10,45 @@
         body {
             font-family: 'Roboto', system-ui, sans-serif;
         }
+        #header-wrapper {
+          margin-bottom: 0;
+          width: 100%;
+          clear: both;
+          height: 61px;
+          background: url(../images/header.png) 0 0 repeat-x;
+        }
+        #header {
+          margin: 0 auto;
+          width: 100%;
+          position: relative;
+        }
+        
+        #header .logo {
+          float: left;
+          margin-top:17px;
+          width: 186px;
+          height: 27px;
+          background: url(/images/logo.png) 0 0 no-repeat;
+          text-indent: -999em;
+        }
+        /********************/
+        /*  Retina support  */
+        /********************/
+        
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+          #header-wrapper {
+            background-image: url(../images/header@2x.png);
+            background-size: 8px 61px;
+          }
+          #header .logo {
+            background-image: url(/images/logo@2x.png);
+            background-size: 186px 27px;
+          }
+        }
         .page {
             max-width: 1200px;
             margin: 0 auto;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 0 rgba(0,0,0,0.1);
         }
         .beige-bg {
             background-color: #f5e8d3;
@@ -41,59 +76,58 @@
             text-align: center;
             display: inline-block;
         }
-        .main-text {
-            font-size: 18px;
-            line-height: 1.65;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Roboto', system-ui, sans-serif;
-        }
     </style>
 </head>
 <body class="bg-white">
-
+    <div id="header-wrapper">
+      <div id="header">
+        <div>
+          <a class="logo" href="https://bezkaries.com/">BezKaries.com</a>
+        </div>
+      </div><!-- #header -->
+    </div><!-- #header-wrapper -->
     <!-- PAGE 1 -->
     <div class="page mb-12">
         <!-- Top beige section -->
-        <div class="beige-bg py-16 px-12 text-center">
+        <div class="beige-bg py-16 px-8 text-center">
             <h1 class="text-4xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto">
                 Искаш ли детето ти да има здрави и подредени зъби и красива усмивка <span class="block">БЕЗ нужда от дълго и скъпо ортодонтско лечение?</span>
             </h1>
         </div>
 
         <!-- Book description and image -->
-        <div class="grid md:grid-cols-2 gap-12 items-start px-12 py-16 bg-white">
-            <div class="space-y-6">
-                <p class="main-text">
+        <div class="grid md:grid-cols-2 gap-12 items-center px-8 py-16 bg-white">
+            <div class="space-y-6 text-lg">
+                <p class="text-xl">
                     Първата книга, която включва цялата научно-<br>базирана съвременна информация как да отгледаш детето си така, че то да расте с правилна стойка на тялото, балансирана захапка, красива усмивка и хармонично лице.
                 </p>
             </div>
             
             <!-- Book cover -->
-            <div class="flex justify-start md:justify-center">
-                <img src="https://picsum.photos/id/1015/380/520" alt="Книга - Най-красивото лице на твоето дете" class="shadow-2xl rounded-lg">
+            <div class="flex justify-center">
+                <img src="/images/cover.png" srcset="/images/cover@2x.png 2x" alt="Книга - Най-красивото лице на твоето дете" class="shadow-2xl rounded-lg">
             </div>
         </div>
 
         <!-- Order button -->
-        <div class="flex justify-start pl-12 pb-16 bg-white">
-            <a href="#" class="red-button text-xl">Поръчай книгата</a>
+        <div class="flex justify-center pb-16 bg-white">
+            <a href="#orderForm" class="red-button text-xl">Поръчай книгата</a>
         </div>
     </div>
 
     <!-- PAGE 2 -->
     <div class="page mb-12 bg-white">
-        <div class="px-12 py-12">
-            <div class="max-w-3xl mx-auto">
-                <p class="main-text">Днес е много често срещано децата да имат криви зъби и неправилна захапка. Но често <strong>не означава нормално</strong>. Повечето родители и специалисти биват убеждавани, <strong>че няма друг начин освен да се поставят брекети, шини или други апаратчета за зъби.</strong></p>
+        <div class="px-8 py-12">
+            <div class="max-w-3xl mx-auto prose prose-lg">
+                <p>Днес е много често срещано децата да имат криви зъби и неправилна захапка. Но често <strong>не означава нормално</strong>. Повечето родители и специалисти биват убеждавани, <strong>че няма друг начин освен да се поставят брекети, шини или други апаратчета за зъби.</strong></p>
                 
-                <p class="main-text mt-6">Да, много пъти е точно така.</p>
+                <p class="mt-6">Да, много пъти е точно така.</p>
                 
-                <p class="main-text mt-6">Но в повечето случаи навременната грижа и целенасочена превенция може да минимизира или дори да избегне нуждата от ортодонтско лечение.</p>
+                <p class="mt-6">Но в повечето случаи навременната грижа и целенасочена превенция може да минимизира или дори да избегне нуждата от ортодонтско лечение.</p>
                 
                 <h3 class="text-2xl font-semibold mt-12 mb-6">Може би се питате дали тази книга е за вас?</h3>
                 
-                <ul class="list-none space-y-3 main-text">
+                <ul class="list-none space-y-3 text-lg">
                     <li>• ДА, ако сте родител на дете 0-6г;</li>
                     <li>• ДА, ако имате дете между 6-12г и обмисляте, планирате или вече провеждате ортодонтско лечение;</li>
                     <li>• ДА, ако сте родител на дете, което има орални навици като стоене с отворена уста, дишане през устата, смучене на пръсти или биберон;</li>
@@ -109,19 +143,20 @@
             <a href="#" class="yellow-button text-xl">Откъс от книгата (PDF)</a>
         </div>
 
-        <div class="px-12 py-16 max-w-3xl mx-auto">
+        <div class="px-8 py-16 max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-8">НАЙ-КРАСИВОТО ЛИЦЕ НА ТВОЕТО ДЕТЕ</h2>
-            <p class="main-text leading-relaxed">
+            <p class="text-lg leading-relaxed">
                 е книга, базирана на дългогодишният опит на д-р Радосвета Симеонова като зъболекар с фокус върху профилактиката на денталните заболявания. В книгата ще откриете полезна и практична информация, с която ще помогнете на детето си да расте здраво и ще добиете увереност, когато се налага да посетите специалист.
             </p>
-            <p class="main-text mt-8">От тази книга ще разберете</p>
+            
+            <p class="mt-8 text-lg">От тази книга ще разберете</p>
         </div>
     </div>
 
     <!-- PAGE 3 -->
     <div class="page mb-12 bg-white">
-        <div class="px-12 py-12 max-w-4xl mx-auto">
-            <ul class="list-none space-y-4 main-text mb-16">
+        <div class="px-8 py-12 max-w-4xl mx-auto">
+            <ul class="list-none space-y-4 text-lg mb-16">
                 <li>• Кои са най-важните фактори за правилно развитие на лицето, челюстите и зъбите;</li>
                 <li>• Кои са най-честите причини за криви зъби и неправилна захапка;</li>
                 <li>• Как навици като устно дишане, стоене с отворена уста, смучене на пръст или биберон могат да повлияят на здравето, растежа и развитието на децата;</li>
@@ -129,18 +164,18 @@
                 <li>• Кога и какъв специалист да потърсите;</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold mb-8">Ето какво споделят родителите и специалистите, които вече прочетоха книгата:</h3>
+            <h3 class="text-2xl font-semibold mb-8 text-center">Ето какво споделят родителите и специалистите, които вече прочетоха книгата:</h3>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 px-12 pb-12">
+        <div class="grid md:grid-cols-2 gap-12 px-8 pb-12">
             <!-- Book -->
-            <div class="flex flex-col items-start">
-                <img src="https://picsum.photos/id/1015/380/520" alt="Книга" class="shadow-2xl mb-6">
+            <div class="flex flex-col items-center">
+                <img src="/images/cover.png" srcset="/images/cover@2x.png 2x" alt="Книга" class="shadow-2xl mb-6">
                 <div class="text-4xl font-bold text-red-600">12 EUR</div>
             </div>
             
             <!-- Order Form -->
-            <div class="bg-[#f8f1e3] p-8 rounded-xl">
+            <div class="bg-[#f8f1e3] p-8 rounded-xl" id="orderForm">
                 <h4 class="font-semibold mb-6 text-lg">Информация за клиента</h4>
                 
                 <div class="space-y-6">
@@ -150,42 +185,24 @@
                     <div>
                         <input type="email" placeholder="Email Адрес" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
                     </div>
-                    
+                    <div>
+                        <input type="tel" placeholder="Телефонен номер" class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                    </div>
                     <div>
                         <h5 class="font-medium mb-3">Адрес за доставка</h5>
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="tel" placeholder="Телефонен номер" class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
-                            <select class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
-                                <option>България</option>
-                            </select>
-                        </div>
-                        <input type="text" placeholder="Адрес" class="mt-4 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                        <input type="text" placeholder="Офис на Спиди или адрес за доставка" class="mt-4 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
                         <input type="text" placeholder="Град" class="mt-4 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
                     </div>
                     
-                    <div>
-                        <h5 class="font-medium mb-3">Метод за доставка</h5>
-                        <div class="space-y-3">
-                            <label class="flex items-center gap-3">
-                                <input type="radio" name="delivery" checked> 
-                                <span>До офис Econt — 2.99€ / 5.85лв</span>
-                            </label>
-                            <label class="flex items-center gap-3">
-                                <input type="radio" name="delivery"> 
-                                <span>До адрес Econt — 3.99€ / 7.80лв</span>
-                            </label>
-                        </div>
-                    </div>
-
                     <!-- Quantity Select -->
                     <div>
                         <label class="block font-medium mb-2">Брой книги</label>
                         <select id="quantity" onchange="updateTotal()" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 text-lg font-medium">
-                            <option value="1">1</option>
+                            <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="5" selected>5</option>
+                            <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
@@ -203,9 +220,8 @@
                     </div>
                 </div>
                 
-                <div class="mt-8 flex justify-start">
-                    <button onclick="alert('Поръчката е завършена! (Demo)')" 
-                            class="red-button text-lg font-bold flex items-center gap-2">
+                <div class="mt-8 flex justify-center">
+                    <button onclick="alert('Поръчката е завършена! (Demo)')" class="red-button text-lg font-bold flex items-center gap-2">
                         ЗАВЪРШИ ПОРЪЧКАТА СИ →
                     </button>
                 </div>
@@ -215,7 +231,7 @@
 
     <!-- PAGE 4 -->
     <div class="page bg-[#f8f1e3] py-12">
-        <div class="max-w-5xl mx-auto px-12">
+        <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Testimonial 1 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow">
@@ -254,6 +270,7 @@
             document.getElementById('totalPrice').textContent = `${total} EUR`;
         }
 
+        // Initialize on page load
         window.onload = updateTotal;
     </script>
 </body>
