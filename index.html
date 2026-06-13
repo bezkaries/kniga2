@@ -10,6 +10,13 @@
         body {
             font-family: 'Roboto', system-ui, sans-serif;
         }
+        #header-wrapper {
+          margin-bottom: 0;
+          width: 100%;
+          clear: both;
+          height: 61px;
+          background: url(../images/header.png) 0 0 repeat-x;
+        }
         #header {
           margin: 0 auto;
           width: 100%;
@@ -29,6 +36,10 @@
         /********************/
         
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+          #header-wrapper {
+            background-image: url(../images/header@2x.png);
+            background-size: 8px 61px;
+          }
           #header .logo {
             background-image: url(/images/logo@2x.png);
             background-size: 186px 27px;
@@ -245,7 +256,15 @@
     </footer>
 
     <script>
-        // Tailwind script already loaded
+        function updateTotal() {
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            const pricePerBook = 12;
+            const total = (quantity * pricePerBook).toFixed(2);
+            document.getElementById('totalPrice').textContent = `${total} EUR`;
+        }
+
+        // Initialize on page load
+        window.onload = updateTotal;
     </script>
 </body>
 </html>
